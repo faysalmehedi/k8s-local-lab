@@ -1,0 +1,7 @@
+kubectl config view --minify --raw
+kubectl config get-contexts
+
+kubectl config set-context --current --cluster='kind-k8s-lab' --user="kind-k8s-lab"
+kubectl config set-context --current --cluster='k3d-k8s-lab' --user='admin@k3d-k8s-lab'
+
+# insecure-skip-tls-verify: true

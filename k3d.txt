@@ -1,0 +1,14 @@
+# Installation
+
+curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
+
+# k3d Cluster Create
+k3d cluster create \
+	--servers 1 \
+	--agents 3 \
+	--api-port 0.0.0.0:6441 \
+	--port '8087:80@loadbalancer' \
+	--port '8088:443@loadbalancer' k8s-lab
+
+# if want to create from yaml
+k3d cluster create --config k3d.yaml
